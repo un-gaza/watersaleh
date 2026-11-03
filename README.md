@@ -1,16 +1,42 @@
-# React + Vite
+# نظام تقارير تشغيل وضخ المياه
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+نظام بنيته لتسجيل ومتابعة التشغيل اليومي لمحطات المياه: ساعات تشغيل المولد، والوقود، والإنتاج، والمياه الموزعة، والفحوصات، والملاحظات، كلها بتقارير مرتبة بمكان واحد.
 
-Currently, two official plugins are available:
+**النظام:** https://fridge-oracle-sza.web.app/
+**نسخة GitHub Pages:** https://un-gaza.github.io/watersaleh/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ليش بنيته
 
-## React Compiler
+متابعة محطة مياه يعني أرقام كل يوم: كم ساعة اشتغل المولد، كم لتر وقود راح، كم كوب انضخ. لما تنكتب هالأرقام على ورق أو برسائل، بيصير صعب ترجعلها، وصعب تكتشف إذا في رقم غلط، وصعب تطلع منها تقرير للإدارة. فبنيت نظام بيحسب القيم لحاله، وبيحفظ كل تقرير بالأرشيف، وبيطلعه PDF أو Excel أو يبعثه واتساب.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## شو فيه
 
-## Expanding the ESLint configuration
+- **إدخال التقرير اليومي:** ساعات التشغيل، والإنتاج، والمياه الموزعة، والفحوصات، مع حساب تلقائي للقيم.
+- **سجل الوقود:** إضافة كميات الوقود وأرشيفها.
+- **لوحة متابعة:** رسوم بيانية للإنتاج والتشغيل.
+- **الأرشيف:** كل التقارير السابقة، مع التعديل والبحث.
+- **مركز التصدير:** PDF و Excel وطباعة ومشاركة.
+- **المستخدمين والصلاحيات،** وسجل لكل عملية بتصير على النظام.
+- وضع داكن وفاتح، وواجهة عربية كاملة.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## كيف بنيته
+
+React و Vite، والبيانات وتسجيل الدخول على Firebase (Firestore و Authentication). الواجهة بـ Tailwind، والرسوم بـ Recharts، والتصدير بـ jsPDF و xlsx.
+
+## تشغيله على جهازك
+
+انسخ `.env.example` إلى `.env` وحط فيه إعدادات مشروع Firebase تبعك، وبعدين:
+
+```bash
+npm install
+npm run dev
+```
+
+## اللي لسا ناقص
+
+النظام لسا قيد التطوير.
+
+---
+
+**مهند المشهراوي**: مهندس نظم معلومات جغرافية ومطوّر أنظمة ويب، غزة.
+[الموقع](https://mmashharawi2021-cell.github.io/myprofile-/) · [LinkedIn](https://www.linkedin.com/in/mohanad-elmashharawi-a4bb23148) · [GitHub](https://github.com/mmashharawi2021-cell)
